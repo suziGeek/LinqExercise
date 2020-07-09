@@ -36,6 +36,8 @@ namespace LinqExercise
 
             //Print to the console only the numbers greater than 6
 
+
+
             //Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
 
             //Change the value at index 4 to your age, then print the numbers in decsending order
