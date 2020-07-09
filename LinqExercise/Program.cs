@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace LinqExercise
 {
@@ -22,7 +23,16 @@ namespace LinqExercise
 
             //Print the Sum and Average of numbers
 
+            Console.WriteLine(numbers.Sum());
+            Console.WriteLine(numbers.Average());
+
             //Order numbers in ascending order and decsending order. Print each to console.
+           
+            var ordered = numbers.OrderBy(x => x);
+            foreach(var x in ordered)
+            {
+                Console.WriteLine(x);
+            }
 
             //Print to the console only the numbers greater than 6
 
