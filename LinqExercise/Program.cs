@@ -34,7 +34,21 @@ namespace LinqExercise
                 Console.WriteLine(x);
             }
 
+            var goingDown = numbers.OrderByDescending(x => x);
+            foreach (var x in goingDown)
+            {
+                Console.WriteLine(x);
+            }
+
+
+
             //Print to the console only the numbers greater than 6
+
+            var greaterThan = numbers.Where(r => r > 6);
+            foreach (var x in greaterThan)
+            {
+                Console.WriteLine(x);
+            }
 
 
 
