@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 
 namespace LinqExercise
@@ -53,6 +54,16 @@ namespace LinqExercise
 
 
             //Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
+            var count = 0;
+            var down = numbers.OrderByDescending(x => x);
+            
+            foreach (var x in down)
+            {
+                count++;
+                if(count <=4)
+                { Console.WriteLine(x); }
+                    
+            }
 
             //Change the value at index 4 to your age, then print the numbers in decsending order
 
