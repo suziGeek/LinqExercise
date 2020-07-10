@@ -81,15 +81,29 @@ namespace LinqExercise
             //Print all the employees' FullName properties to the console only if their FirstName starts with a C OR an S.
             //Order this in acesnding order by FirstName.
 
+            var empName = employees.Where(x => x.FirstName.StartsWith('C') || x.FirstName.StartsWith('S')).OrderBy(x=>x.FirstName);
+            
+            foreach (var x in empName)
+            {               
+                Console.WriteLine(x.FirstName);
+            }
+
             //Print all the employees' FullName and Age who are over the age 26 to the console.
             //Order this by Age first and then by FirstName in the same result.
+
+            var empAge = employees.Where(x => x.Age > 26 ).OrderBy(x => x.Age);
+
+            foreach (var x in empAge)
+            {
+                Console.WriteLine($"Age: {x.Age}, Name: {x.FirstName}");
+            }
 
             //Print the Sum and then the Average of the employees' YearsOfExperience
             //if their YOE is less than or equal to 10 AND Age is greater than 35
 
             //Add an employee to the end of the list without using employees.Add()
 
-            
+
             Console.WriteLine();
 
             Console.ReadLine();
