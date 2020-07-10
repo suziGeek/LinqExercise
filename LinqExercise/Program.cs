@@ -91,7 +91,7 @@ namespace LinqExercise
             //Print all the employees' FullName and Age who are over the age 26 to the console.
             //Order this by Age first and then by FirstName in the same result.
 
-            var empAge = employees.Where(x => x.Age > 26 ).OrderBy(x => x.Age);
+            var empAge = employees.Where(x => x.Age > 26 ).OrderBy(x => x.Age).ThenBy(s =>s.FirstName) ;
 
             foreach (var x in empAge)
             {
@@ -100,9 +100,24 @@ namespace LinqExercise
 
             //Print the Sum and then the Average of the employees' YearsOfExperience
             //if their YOE is less than or equal to 10 AND Age is greater than 35
+            var empExp = employees.Where(x => x.YearsOfExperience <= 10 && x.Age > 35);
+
+            var sumEmp = empExp.Sum(x => x.YearsOfExperience);
+            var avgEmp = empExp.Average(x => x.YearsOfExperience);
+
+
+
+                Console.WriteLine($"Sum YOE: {sumEmp}, Average YOE: {avgEmp}");
+
 
             //Add an employee to the end of the list without using employees.Add()
 
+            employees = employees.Append(new Employee("Suzanne ", "Allen", 38, 40)).ToList();
+
+            foreach (var x in employees)
+            {
+                Console.WriteLine($"Age: {x.Age}, Name: {x.FirstName}");
+            }
 
             Console.WriteLine();
 
